@@ -7,14 +7,14 @@ question_from_user = st.text_area("Write your question here:", height = 200, pla
 ask_button = st.button("click here for response")
 
 if ask_button:    
-    if file:
-        for uploaded_file in file:
+    if question_from_user:
+        # for uploaded_file in file:
             # code to process uploaded_file goes here
             st.write("Response")
             st.chat_message("Laxmi").write(question_from_user)
             retrieved_docs = retrieve_docs(question_from_user)
             response = answer_query(documents=retrieved_docs, model=llm_model, query = question_from_user)
-            static_chat = "this is a static message for checking"
+            # static_chat = "this is a static message for checking"
             st.chat_message("System").write(response)
     else:
-        st.write("Please upload a PDF file before asking a question.")
+        st.write("You have not ask anything, please type in the field")
