@@ -29,6 +29,6 @@ def answer_query(documents, model, query):
     chain = prompt | model
     return chain.invoke({"question": query, "context": context})
 
-question = "who is PSS ?"
-retrieved_docs = retrieve_docs(question)
-print("Answer:", answer_query(documents=retrieved_docs, model=llm_model, query=question))
+# question = "who is PSS ?"
+# retrieved_docs = retrieve_docs(question)
+# print("Answer:", answer_query(documents=retrieved_docs, model=llm_model, query=question))
